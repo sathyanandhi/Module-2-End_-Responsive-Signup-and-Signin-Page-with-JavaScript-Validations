@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet"> -->
+    <style>
+        body{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(27, 216, 6);
+}
+h1{
+    text-align: center;
+    color: grey;
+}
+form{
+    width: 600px;
+    margin: auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 20px;
+}
+input[type="text"],
+input[type="password"],
+input[type="number"]
+{
+    width: 100%;
+    padding:10px;
+    margin: 5px;
+}
+
+
+input[type="submit"],
+input[type="reset"]
+{
+    background-color: green;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor:pointer;
+}
+.error-message{
+    color:red;
+    
+}
+.form{
+    background-color: hsl(61, 100%, 52%);
+    color: rgb(8, 5, 7);
+}
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;background-color: chocolate;padding: 10px;margin-bottom: 0;color: chartreuse;">Signup Form</h1>
+     <form   method="post"class="form" name="signupform" id="signupform" onsubmit="return Validate()">
+         <input type="hidden" id="userid"/>
+        <div>
+          <label>Name</label>
+          <input type="text" id="name" name="username" placeholder="Enter the name" value="" />
+          <span id="name-error" class="error-message"></span>
+        </div>
+        <div>
+            <label>Address</label>
+            <input type="text" id="address" name="address" placeholder="Enter the address" value="" />
+            <span id="address-error" class="error-message"></span>
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="text" id="email" name="email" placeholder="Enter email" value=""/>
+            <span id="email-error" class="error-message"></span>
+        </div>
+        <div>
+            <label>Password</label>
+              <input type="password" id="pwd" name="pwd" placeholder="Enter the password" value=""/>
+            <span id="pwd-error" class="error-message"></span>
+        </div>
+         <div>
+            <label>Confirm Password</label>
+              <input type="password" id="cpwd" name="cpwd" placeholder="Enter the password" value=""/>
+            <span id="cpwd-error" class="error-message"></span>
+        </div>
+        
+        <div>
+            <label>Contact</label><br>
+            <input type="number" id="mobileno" name="mobileno" value="" placeholder="Enter the mobile number">
+            <span id="mobileno-error" class="error-message"></span>
+        <div>
+            <input type="submit" value="Submit"/>
+            <input type="reset" value="Reset"/>
+        </div>
+
+    </form>
+<p>Already have an account
+<a href="login.html"><button type="button"class="btn btn-success">
+Clik here to Login</button></a></p>
+<script src="script1.js"></script>
+</body>
+</html>

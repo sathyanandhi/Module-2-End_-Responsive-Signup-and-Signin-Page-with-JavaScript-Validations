@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <style>
+        .login{
+            background-color: rgb(30, 210, 69);
+        }
+        body{
+            background-color: rgb(200, 207, 214);
+        }
+    </style>
+</head>
+<body>
+        <h1 style="text-align: center;background-color: chocolate;padding: 10px;margin-bottom: 0;color: chartreuse;">Welcome to Login Form</h1>
+
+    <form id="loginForm" class="login" >
+   
+  <div class="row py-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label ">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" required>
+    </div>
+  </div>
+  <div class="row py-3">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword3"required>
+    </div>
+  </div>
+  
+   
+  
+  
+  <button type="submit" class="btn btn-primary mt-5 mx-5">Sign in</button>
+
+</form>
+<p id="login-error" style="color: red;"></p>
+<script >
+  
+     
+    
+
+
+
+
+
+
+
+
+
+
+ 
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('inputEmail3').value;
+    const password = document.getElementById('inputPassword3').value;
+    const errorElement = document.getElementById('login-error');
+  
+                const response = await fetch("https://692fd19a778bbf9e006e96b2.mockapi.io/signup");
+        const users = await response.json();
+       console.log(users);
+               const user = users.find(u => u.email === email && u.password === password);
+              
+
+
+  if(user) {
+            // localStorage.setItem('loggedInUserId', users.id);
+            window.location.href = 'tourist.html'; 
+            console.log(window.location.href);
+            console.log(user);}
+            
+else{
+   errorElement.textContent = 'Invalid email or password or enter the correct email and password';
+}
+        
+
+
+
+           
+    
+});      
+</script>
+
+</body>
+</html>
